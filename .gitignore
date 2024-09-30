@@ -76,6 +76,7 @@ lib/
 lib/i386-win32/
 
 # data info
+backup
 ui/backup
 modules/backup
 *.dat
