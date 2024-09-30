@@ -76,9 +76,8 @@ lib/
 lib/i386-win32/
 
 # data info
-data/
 ui/backup
 modules/backup
-
+*.dat
 # csv
 *.csv
