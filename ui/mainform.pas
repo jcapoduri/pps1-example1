@@ -53,11 +53,14 @@ end;
 procedure TmainApp.FormCreate(Sender: TObject);
 var
     login  : TloginWidget;
+    result : integer;
 begin
     { init dbs}
     users.setupDB('data\', 'users');
     Application.CreateForm(TloginWidget, login);
-    login.ShowModal;
+    result := login.ShowModal;
+    if result <> mrOK then
+       Application.Terminate;
 end;
 
 procedure TmainApp.listUserMenuItemClick(Sender: TObject);

@@ -16,8 +16,8 @@ type
     ButtonPanel1: TButtonPanel;
     userInput: TLabeledEdit;
     passwordInput: TLabeledEdit;
-    procedure ButtonPanel1Enter(Sender: TObject);
     procedure CloseButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
   private
 
   public
@@ -38,22 +38,29 @@ begin
   Application.Terminate;
 end;
 
-procedure TloginWidget.ButtonPanel1Enter(Sender: TObject);
+procedure TloginWidget.OKButtonClick(Sender: TObject);
 var
-  pos  : integer;
-  user : TUser;
+  pos          : integer;
+  user         : TUser;
+  messageError : string;
 begin
-  pos := users.search(userInput.Text);
+  pos          := users.search(userInput.Text);
+  messageError := '';
   if pos > -1  then
      begin
        user := users.getUserByPos(pos);
        if user.password = passwordInput.Text then
             Close
        else
-         MessageDlg('password invalido',mtCustom, [mbOk], 0);
+         messageError := 'password invalido';
      end
   else
-      MessageDlg('email invalido',mtCustom, [mbOk], 0);
+      messageError := 'email invalido';
+  ModalResult := mrNone;
+  if messageError = '' then
+    ModalResult := mrOK
+  else
+    MessageDlg(messageError,mtWarning, [mbOk], 0);
 end;
 
 

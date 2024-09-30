@@ -43,6 +43,7 @@ object loginWidget: TloginWidget
     Width = 681
     OKButton.Name = 'OKButton'
     OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
     HelpButton.Name = 'HelpButton'
     HelpButton.DefaultCaption = True
     CloseButton.Name = 'CloseButton'
@@ -51,7 +52,6 @@ object loginWidget: TloginWidget
     CancelButton.Name = 'CancelButton'
     CancelButton.DefaultCaption = True
     TabOrder = 2
-    OnEnter = ButtonPanel1Enter
     ShowButtons = [pbOK, pbClose]
   end
 end
