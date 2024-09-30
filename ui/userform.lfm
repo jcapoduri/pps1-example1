@@ -1,0 +1,114 @@
+object userFrm: TuserFrm
+  Left = 501
+  Height = 412
+  Top = 290
+  Width = 320
+  Caption = 'Usuario'
+  ClientHeight = 412
+  ClientWidth = 320
+  Constraints.MinHeight = 380
+  Constraints.MinWidth = 320
+  LCLVersion = '3.4.0.0'
+  object emailInput: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 24
+    Width = 296
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 296
+    EditLabel.Caption = 'Email:'
+    TabOrder = 0
+    TextHint = 'email'
+  end
+  object passwordInput: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 72
+    Width = 296
+    Anchors = [akTop, akLeft, akRight]
+    EchoMode = emPassword
+    EditLabel.Height = 15
+    EditLabel.Width = 296
+    EditLabel.Caption = 'Contraseña:'
+    PasswordChar = '*'
+    TabOrder = 1
+    TextHint = 'contraseña'
+  end
+  object password2Input: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 121
+    Width = 296
+    Anchors = [akTop, akLeft, akRight]
+    EchoMode = emPassword
+    EditLabel.Height = 15
+    EditLabel.Width = 296
+    EditLabel.Caption = 'Repetir contraseña:'
+    PasswordChar = '*'
+    TabOrder = 2
+    TextHint = 'repetir contraseña'
+  end
+  object nameInput: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 169
+    Width = 296
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 296
+    EditLabel.Caption = 'Nombre:'
+    TabOrder = 3
+    TextHint = 'nombre'
+  end
+  object statusComboBox: TComboBox
+    Left = 8
+    Height = 23
+    Top = 272
+    Width = 193
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Activo'
+      'Inactivo'
+    )
+    TabOrder = 4
+    Text = 'Activo'
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 372
+    Width = 308
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 5
+    OnEnter = ButtonPanel1Enter
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 248
+    Width = 38
+    Caption = 'Estado:'
+  end
+  object lastnameInput: TLabeledEdit
+    Left = 8
+    Height = 23
+    Top = 216
+    Width = 296
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 296
+    EditLabel.Caption = 'Apellido:'
+    TabOrder = 6
+    TextHint = 'apellido'
+  end
+end

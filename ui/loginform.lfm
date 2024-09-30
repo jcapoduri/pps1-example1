@@ -1,0 +1,57 @@
+object loginWidget: TloginWidget
+  Left = 224
+  Height = 196
+  Top = 334
+  Width = 693
+  Caption = 'Autentificacion'
+  ClientHeight = 196
+  ClientWidth = 693
+  LCLVersion = '3.4.0.0'
+  object userInput: TLabeledEdit
+    Left = 24
+    Height = 23
+    Hint = 'email'
+    Top = 24
+    Width = 655
+    Anchors = [akTop, akLeft, akRight]
+    EditLabel.Height = 15
+    EditLabel.Width = 655
+    EditLabel.Caption = 'Usuario'
+    TabOrder = 0
+    Text = 'jcapoduri@gmail.com'
+  end
+  object passwordInput: TLabeledEdit
+    Left = 24
+    Height = 23
+    Top = 72
+    Width = 655
+    HelpType = htKeyword
+    HelpKeyword = 'contraseña'
+    Anchors = [akTop, akLeft, akRight]
+    EchoMode = emPassword
+    EditLabel.Height = 15
+    EditLabel.Width = 655
+    EditLabel.Caption = 'Contraseña'
+    PasswordChar = '*'
+    TabOrder = 1
+    Text = 'terere123'
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 156
+    Width = 681
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CloseButton.OnClick = CloseButtonClick
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 2
+    OnEnter = ButtonPanel1Enter
+    ShowButtons = [pbOK, pbClose]
+  end
+end

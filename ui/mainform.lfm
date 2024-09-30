@@ -1,0 +1,38 @@
+object mainApp: TmainApp
+  Left = 403
+  Height = 220
+  Top = 277
+  Width = 320
+  Caption = 'PPS1 - Example Application'
+  Menu = mainMenu
+  OnCreate = FormCreate
+  LCLVersion = '3.4.0.0'
+  object mainMenu: TMainMenu
+    Left = 52
+    Top = 17
+    object Archivo: TMenuItem
+      Caption = 'Archivo'
+      OnClick = ArchivoClick
+      object Salir: TMenuItem
+        Caption = 'Salir'
+        OnClick = SalirClick
+      end
+    end
+    object userMenuItem: TMenuItem
+      Caption = 'Usuarios'
+      OnClick = userMenuItemClick
+      object userAddMenuItem: TMenuItem
+        Caption = 'Agregar'
+        OnClick = userAddMenuItemClick
+      end
+      object userEditMenuItem: TMenuItem
+        Caption = 'Editar user'
+        OnClick = userEditMenuItemClick
+      end
+      object listUserMenuItem: TMenuItem
+        Caption = 'Listar users'
+        OnClick = listUserMenuItemClick
+      end
+    end
+  end
+end

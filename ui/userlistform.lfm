@@ -1,0 +1,46 @@
+object userListFrm: TuserListFrm
+  Left = 569
+  Height = 398
+  Top = 222
+  Width = 742
+  Caption = 'Lista de usuarios'
+  ClientHeight = 398
+  ClientWidth = 742
+  OnShow = FormShow
+  LCLVersion = '3.4.0.0'
+  object exportButton: TButton
+    Left = 564
+    Height = 25
+    Top = 361
+    Width = 82
+    Anchors = [akRight, akBottom]
+    Caption = 'Exportar a csv'
+    TabOrder = 0
+    OnClick = exportButtonClick
+  end
+  object closeButton: TButton
+    Left = 654
+    Height = 25
+    Top = 361
+    Width = 82
+    Anchors = [akRight, akBottom]
+    Caption = 'Cerrar'
+    TabOrder = 1
+    OnClick = closeButtonClick
+  end
+  object usersGrid: TStringGrid
+    Left = 8
+    Height = 349
+    Top = 8
+    Width = 724
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabOrder = 2
+  end
+  object saveDialog: TSaveDialog
+    Title = 'Exportar usuarios'
+    DefaultExt = '.csv'
+    FileName = 'users.csv'
+    Left = 506
+    Top = 371
+  end
+end
