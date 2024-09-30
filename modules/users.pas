@@ -44,6 +44,10 @@ implementation
       write(db, user);
   end;
 
+  { 
+    asigna el archivo de usuarios.
+    Si no existe, lo crea y ademas genera el primer user de prueba
+  }
   procedure setupDB(path, filename : string);
   var
     fullpath    : string;
@@ -97,7 +101,8 @@ implementation
       else
           search := -1;
   end;
-
+  
+  { dada una posicion, devuelve el usuario }
   function getUserByPos(pos : integer) : TUser;
   var
       user: TUser;
@@ -108,12 +113,25 @@ implementation
       getUserByPos := user;
   end;
 
+  {
+    Agrega un usuario al final del archivo si el email no existe
+    si no existe, devuelve true
+    si existe (un error) devuelve false
+  }
   function  addUser(var user : TUser): boolean;
+  var
+    userPos : integer;
   begin
-    reset(db);    
-    _set(filesize(db), user);
-    close(db);
-    addUser := true;
+    userPos := search(user.email);
+    if userPos = -1 then
+      begin
+        reset(db);        
+        _set(filesize(db), user);
+        close(db);
+        addUser := true;
+      end
+    else
+      addUser := false;
   end;
 
   function getTotalUsers(): integer;
